@@ -29,12 +29,18 @@ function App() {
 		getTimeData();
 	}, []);
 
-	console.log(info);
+	let clockContent = <p></p>;
+
+	if (error) {
+		clockContent = <p>{error}</p>;
+	} else {
+		clockContent = <Clock time={time} hour={hour} timezone={timezone} error={error} />;
+	}
 
 	return (
 		<>
 			<Quote />
-			<Clock time={time} hour={hour} timezone={timezone} error={error} />
+			{clockContent}
 			<InfoPanel />
 		</>
 	);
