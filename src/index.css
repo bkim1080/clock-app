@@ -8,8 +8,13 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 body {
 	font-family: "Inter", sans-serif;
+	font-size: 1.6rem;
 
 	background-image: url("/public/assets/mobile/bg-image-daytime.jpg");
 	background-size: cover;
