@@ -5,19 +5,19 @@ export default function Clock(props) {
 	// Render Greeting Message
 	const chooseGreeting = () => {
 		if (props.hour >= 5 && props.hour < 12) {
-			return "GOOD MORNING";
+			return <span className={styles.greeting}>GOOD MORNING</span>;
 		} else if (props.hour >= 12 && props.hour < 18) {
-			return "GOOD EVENING";
+			return <span className={styles.greeting}>GOOD EVENING</span>;
 		} else {
-			return "GOOD NIGHT";
+			return <span className={styles.greeting}>GOOD NIGHT</span>;
 		}
 	};
 	// Render Symbol
 	const chooseSymbol = () => {
 		if (props.hour >= 5 && props.hour < 17) {
-			return <img className="symbol" src="/assets/desktop/icon-sun.svg" alt="sun" />;
+			return <img className={styles.symbol} src="/assets/desktop/icon-sun.svg" alt="sun" />;
 		} else {
-			return <img className="symbol" src="/assets/desktop/icon-moon.svg" alt="moon" />;
+			return <img className={styles.symbol} src="/assets/desktop/icon-moon.svg" alt="moon" />;
 		}
 	};
 
@@ -63,12 +63,12 @@ export default function Clock(props) {
 	console.log(stateName);
 
 	return (
-		<div>
+		<div className={`${styles["container-main"]}`}>
 			<div>
-				<span className={styles.message}>{chooseSymbol()}</span>
-				<span className={styles.message}>{chooseGreeting()}</span>
+				{chooseSymbol()}
+				{chooseGreeting()}
 			</div>
-			<div>
+			<div className={`${styles["container-time"]}`}>
 				<span className={styles.time}>{props.time}</span>
 				<span className={styles.timezone}>{props.timezone}</span>
 			</div>

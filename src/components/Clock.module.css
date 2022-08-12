@@ -1,27 +1,44 @@
+.container-main {
+	color: white;
+
+	margin-top: 22.6rem;
+	margin-bottom: 4.8rem;
+}
+
+.container-time {
+	margin-top: 1.6rem;
+	margin-bottom: 1.6rem;
+}
+
 .location-info {
-	font-size: 15px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	line-height: 2.8rem;
 	text-transform: uppercase;
 }
 
-/* .location-info span {
-	text-transform: capitalize;
-} */
-
-.message {
+.greeting {
 	vertical-align: middle;
 }
 
 .symbol {
+	margin-right: 1.6rem;
+
 	vertical-align: bottom;
+	/* height: 24px;
+	width: 24px; */
 }
 
 .time {
-	font-size: 100px;
+	font-size: 10rem;
 	font-weight: 700;
 	letter-spacing: -2.5px;
+	line-height: 10rem;
 }
 
 .timezone {
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-weight: 300;
+	line-height: 2.8rem;
 }
