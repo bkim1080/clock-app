@@ -7,3 +7,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body {
+	font-family: "Inter", sans-serif;
+
+	background-image: url("/public/assets/mobile/bg-image-daytime.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* min-height: 100vh; */
+}

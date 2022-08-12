@@ -29,7 +29,7 @@ function App() {
 		getTimeData();
 	}, []);
 
-	// console.log(info);
+	console.log(info);
 
 	return (
 		<>
