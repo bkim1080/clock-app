@@ -3,6 +3,7 @@
 
 	margin-top: 22.6rem;
 	margin-bottom: 4.8rem;
+	margin-left: 2.6rem;
 }
 
 .container-time {
@@ -19,6 +20,7 @@
 }
 
 .greeting {
+	letter-spacing: 2px;
 	vertical-align: middle;
 }
 
@@ -35,6 +37,8 @@
 	font-weight: 700;
 	letter-spacing: -2.5px;
 	line-height: 10rem;
+
+	margin-right: 0.5rem;
 }
 
 .timezone {
