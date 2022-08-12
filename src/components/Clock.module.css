@@ -1,3 +1,11 @@
+.message {
+	vertical-align: middle;
+}
+
+.symbol {
+	vertical-align: bottom;
+}
+
 .time {
 	font-family: "Inter", sans-serif;
 	font-size: 100px;
