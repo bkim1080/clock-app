@@ -24,7 +24,7 @@ export default function Clock(props) {
 	};
 
 	useEffect(() => {
-		getLocationInfo();
+		// getLocationInfo();
 	}, []);
 
 	// Render Greeting Message
