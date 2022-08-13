@@ -5,24 +5,28 @@ import InfoPanel from "./components/InfoPanel";
 import Quote from "./components/Quote";
 
 function App() {
-	const [info, setInfo] = useState({ datetime: "" });
+	const [timeInfo, setTimeInfo] = useState({ datetime: "" });
+	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	const time = info.datetime.slice(11, 16);
-	const hour = parseInt(info.datetime.slice(11, 13));
-	const timezone = info.abbreviation;
+	const time = timeInfo.datetime.slice(11, 16);
+	const hour = parseInt(timeInfo.datetime.slice(11, 13));
+	const timezone = timeInfo.abbreviation;
 
 	const getTimeData = async function () {
+		setIsLoading(true);
+		setError(null);
 		try {
 			const response = await fetch("http://worldtimeapi.org/api/ip");
 			if (!response.ok) {
-				throw new Error("Problem getting data");
+				throw new Error("Problem getting data (404)");
 			}
 			const data = await response.json();
-			setInfo(data);
+			setTimeInfo(data);
 		} catch (err) {
 			setError(err.message);
 		}
+		setIsLoading(false);
 	};
 
 	useEffect(() => {
@@ -30,11 +34,14 @@ function App() {
 	}, []);
 
 	let clockContent = <p></p>;
-
+	if (timeInfo.datetime !== "") {
+		clockContent = <Clock time={time} hour={hour} timezone={timezone} error={error} />;
+	}
 	if (error) {
 		clockContent = <p>{error}</p>;
-	} else {
-		clockContent = <Clock time={time} hour={hour} timezone={timezone} error={error} />;
+	}
+	if (isLoading) {
+		clockContent = <p>Loading...</p>;
 	}
 
 	return (

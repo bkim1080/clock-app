@@ -58,9 +58,9 @@ export default function Clock(props) {
 		// getLocationInfo();
 	}, []);
 
-	console.log(locationInfo);
-	console.log(cityName);
-	console.log(stateName);
+	// console.log(locationInfo);
+	// console.log(cityName);
+	// console.log(stateName);
 
 	return (
 		<div className={`${styles["container-main"]}`}>
