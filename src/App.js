@@ -19,7 +19,7 @@ function App() {
 		try {
 			const response = await fetch("http://worldtimeapi.org/api/ip");
 			if (!response.ok) {
-				throw new Error("Problem getting data (404)");
+				throw new Error("Loading Failed");
 			}
 			const data = await response.json();
 			setTimeInfo(data);

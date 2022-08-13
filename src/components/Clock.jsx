@@ -2,6 +2,31 @@ import { useEffect, useState } from "react";
 import styles from "./Clock.module.css";
 
 export default function Clock(props) {
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState(null);
+
+	const getLocationInfo = async function () {
+		setIsLoading(true);
+		setError(null);
+		try {
+			const response = await fetch(
+				"https://api.ipbase.com/v2/info?apikey=fpz1xxBUpR6p2h2P8isLDtb9Cp80jqamRSYLvbxc&ip=1.1.1.1"
+			);
+			if (!response.ok) {
+				throw new Error("Loading Failed");
+			}
+			const data = await response.json();
+			setLocationInfo(data);
+		} catch (err) {
+			setError(err.message);
+		}
+		setIsLoading(false);
+	};
+
+	useEffect(() => {
+		getLocationInfo();
+	}, []);
+
 	// Render Greeting Message
 	const chooseGreeting = () => {
 		if (props.hour >= 5 && props.hour < 12) {
@@ -34,29 +59,26 @@ export default function Clock(props) {
 			},
 		},
 	});
-	// const [error, setError] = useState(null);
 
 	const cityName = locationInfo.data.location.city.name;
 	const stateName = locationInfo.data.location.region.name;
 
-	const getLocationInfo = async function () {
-		try {
-			const response = await fetch(
-				"https://api.ipbase.com/v2/info?apikey=fpz1xxBUpR6p2h2P8isLDtb9Cp80jqamRSYLvbxc&ip=1.1.1.1"
-			);
-			if (!response.ok) {
-				throw new Error("Problem getting data");
-			}
-			const data = await response.json();
-			setLocationInfo(data);
-		} catch (err) {
-			// setError(err.message);
-		}
-	};
+	let locationContent = <div></div>;
 
-	useEffect(() => {
-		// getLocationInfo();
-	}, []);
+	if (cityName !== "" && stateName !== "") {
+		locationContent = (
+			<div className={`${styles["location-info"]}`}>
+				in {""}
+				<span>{cityName}</span>, <span>{stateName}</span>
+			</div>
+		);
+	}
+	if (error) {
+		locationContent = <div className={`${styles["location-info"]}`}>{error}</div>;
+	}
+	if (isLoading) {
+		locationContent = <div className={`${styles["location-info"]}`}>Loading...</div>;
+	}
 
 	// console.log(locationInfo);
 	// console.log(cityName);
@@ -72,10 +94,7 @@ export default function Clock(props) {
 				<span className={styles.time}>{props.time}</span>
 				<span className={styles.timezone}>{props.timezone}</span>
 			</div>
-			<div className={`${styles["location-info"]}`}>
-				in {""}
-				<span>{cityName}</span>, <span>{stateName}</span>
-			</div>
+			{locationContent}
 		</div>
 	);
 }
