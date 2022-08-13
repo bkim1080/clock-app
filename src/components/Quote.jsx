@@ -30,8 +30,15 @@ export default function Quote() {
 	if (quoteInfo) {
 		quoteContent = (
 			<>
-				<p>{quoteInfo.content}</p>
-				<p>{quoteInfo.author}</p>
+				<div className={`${styles["quote-text"]}`}>
+					<p className={`${styles["quote"]}`}>"{quoteInfo.content}"</p>
+					<p className={`${styles["quote-author"]}`}>{quoteInfo.author}</p>
+				</div>
+				<img
+					className={`${styles["refresh-logo"]}`}
+					src="../../assets/desktop/icon-refresh.svg"
+					alt="refresh icon"
+				/>
 			</>
 		);
 	}
