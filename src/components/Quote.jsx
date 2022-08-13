@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Quote.module.css";
 
 export default function Quote() {
-	const [quote, setQuote] = useState({ datetime: "" });
+	const [quoteInfo, setQuoteInfo] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
@@ -15,7 +15,7 @@ export default function Quote() {
 				throw new Error("Loading Failed");
 			}
 			const data = await response.json();
-			setQuote(data);
+			setQuoteInfo(data);
 		} catch (err) {
 			setError(err.message);
 		}
@@ -27,8 +27,13 @@ export default function Quote() {
 	}, []);
 
 	let quoteContent = null;
-	if (quote) {
-		quoteContent = quote.content;
+	if (quoteInfo) {
+		quoteContent = (
+			<>
+				<p>{quoteInfo.content}</p>
+				<p>{quoteInfo.author}</p>
+			</>
+		);
 	}
 	if (error) {
 		quoteContent = error.message;
@@ -37,7 +42,9 @@ export default function Quote() {
 		quoteContent = "Loading...";
 	}
 
-	console.log(quote);
+	console.log(quoteInfo);
+	console.log(quoteInfo.content);
+	console.log(quoteInfo.author);
 
-	return <div>{quoteContent}</div>;
+	return <div className={`${styles["container-main"]}`}>{quoteContent}</div>;
 }
