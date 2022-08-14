@@ -1,7 +1,9 @@
 .arrow-icon {
-	padding: 1.2rem 1rem;
+	padding: 1.3rem 1rem;
 	background-color: #303030;
 	border-radius: 50px;
+
+	margin-left: 1.5rem;
 }
 
 .button {
@@ -9,11 +11,14 @@
 	font-weight: 700;
 	line-height: 1.4rem;
 	letter-spacing: 3px;
-	vertical-align: middle;
+
+	display: inline-flex;
+	align-items: center;
 
 	border: none;
 	border-radius: 50px;
-	padding: 1.2rem 0.4rem 1.2rem 2rem;
+	padding: 0.4rem 0.4rem 0.4rem 2rem;
+	margin-left: 7%;
 	/* opacity: 50%; */
 }
 
