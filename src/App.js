@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 
+import Button from "./components/Button";
 import Clock from "./components/Clock";
 import InfoPanel from "./components/InfoPanel";
 import Quote from "./components/Quote";
 
 function App() {
+	// Button
+	const [isPanelDisplayed, setIsPanelDisplayed] = useState(false);
+
+	const displayPanel = function () {
+		setIsPanelDisplayed((prevIsPanelDisplayed) => !prevIsPanelDisplayed);
+	};
+
 	// Fetch Time Info
 	const [timeInfo, setTimeInfo] = useState({ datetime: "" });
 	const [isLoading, setIsLoading] = useState(false);
@@ -55,7 +63,13 @@ function App() {
 	let infoPanelContent = <p></p>;
 	if (timeInfo.datetime !== "") {
 		infoPanelContent = (
-			<InfoPanel timezoneName={timezoneName} dayOfYear={dayOfYear} dayOfWeek={dayOfWeek} weekNum={weekNum} />
+			<InfoPanel
+				isPanelDisplayed={isPanelDisplayed}
+				timezoneName={timezoneName}
+				dayOfYear={dayOfYear}
+				dayOfWeek={dayOfWeek}
+				weekNum={weekNum}
+			/>
 		);
 	}
 	if (error) {
@@ -69,6 +83,7 @@ function App() {
 		<>
 			<Quote />
 			{clockContent}
+			<Button isPanelDisplayed={isPanelDisplayed} displayPanel={displayPanel} />
 			{infoPanelContent}
 		</>
 	);

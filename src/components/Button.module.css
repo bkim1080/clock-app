@@ -1,0 +1,24 @@
+.down-arrow-icon {
+	transform: rotate(180deg);
+}
+
+.down-arrow-icon,
+.up-arrow-icon {
+	margin-left: 1.5rem;
+}
+
+.button {
+	font-size: 1.2rem;
+	font-weight: 700;
+	line-height: 1.4rem;
+	letter-spacing: 3px;
+
+	display: inline-flex;
+	align-items: center;
+
+	border: none;
+	border-radius: 50px;
+	padding: 0.4rem 0.4rem 0.4rem 2rem;
+	margin-left: 7%;
+	/* opacity: 50%; */
+}
