@@ -1,0 +1,23 @@
+.arrow-icon {
+	padding: 1.2rem 1rem;
+	background-color: #303030;
+	border-radius: 50px;
+}
+
+.button {
+	font-size: 1.2rem;
+	font-weight: 700;
+	line-height: 1.4rem;
+	letter-spacing: 3px;
+	vertical-align: middle;
+
+	border: none;
+	border-radius: 50px;
+	padding: 1.2rem 0.4rem 1.2rem 2rem;
+	/* opacity: 50%; */
+}
+
+.list-item {
+	display: flex;
+	justify-content: space-between;
+}

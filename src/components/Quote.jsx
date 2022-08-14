@@ -6,7 +6,7 @@ export default function Quote() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	const getQuote = async function () {
+	const getQuoteInfo = async function () {
 		setIsLoading(true);
 		setError(null);
 		try {
@@ -23,7 +23,7 @@ export default function Quote() {
 	};
 
 	useEffect(() => {
-		getQuote();
+		getQuoteInfo();
 	}, []);
 
 	let quoteContent = null;
@@ -35,7 +35,8 @@ export default function Quote() {
 					<p className={`${styles["quote-author"]}`}>{quoteInfo.author}</p>
 				</div>
 				<img
-					className={`${styles["refresh-logo"]}`}
+					className={`${styles["refresh-icon"]}`}
+					onClick={getQuoteInfo}
 					src="../../assets/desktop/icon-refresh.svg"
 					alt="refresh icon"
 				/>

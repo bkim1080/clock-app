@@ -12,6 +12,10 @@ function App() {
 	const time = timeInfo.datetime.slice(11, 16);
 	const hour = parseInt(timeInfo.datetime.slice(11, 13));
 	const timezone = timeInfo.abbreviation;
+	const timezoneName = timeInfo.timezone;
+	const dayOfYear = timeInfo.day_of_year;
+	const dayOfWeek = timeInfo.day_of_week;
+	const weekNum = timeInfo.week_number;
 
 	const getTimeData = async function () {
 		setIsLoading(true);
@@ -44,11 +48,13 @@ function App() {
 		clockContent = <p>Loading...</p>;
 	}
 
+	console.log(timeInfo);
+
 	return (
 		<>
 			<Quote />
 			{clockContent}
-			<InfoPanel />
+			<InfoPanel timezoneName={timezoneName} dayOfYear={dayOfYear} dayOfWeek={dayOfWeek} weekNum={weekNum} />
 		</>
 	);
 }
