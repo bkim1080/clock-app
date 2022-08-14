@@ -1,9 +1,12 @@
 .container-main {
 	color: white;
 
+	/* position: absolute; */
+	/* top: 35.5rem; */
+
 	margin-top: 22.6rem;
 	margin-bottom: 4.8rem;
-	margin-left: 2.6rem;
+	margin-left: 7%;
 }
 
 .container-time {
