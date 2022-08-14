@@ -11,31 +11,44 @@ export default function InfoPanel(props) {
 	return (
 		<div>
 			<button className={`${styles["button"]}`} onClick={displayPanel}>
-				MORE{" "}
+				MORE
 				<img
-					className={`${styles["arrow-icon"]}`}
-					src="../../assets/desktop/icon-arrow-down.svg"
-					alt="down arrow icon"
+					className={isPanelDisplayed ? `${styles["up-arrow-icon"]}` : `${styles["down-arrow-icon"]}`}
+					src="../../assets/desktop/icon-arrow-up.svg"
+					alt="arrow icon"
 				/>
+				{/* {isPanelDisplayed ? (
+					<img
+						className={`${styles["up-arrow-icon"]}`}
+						src="../../assets/desktop/icon-arrow-up.svg"
+						alt="up arrow icon"
+					/>
+				) : (
+					<img
+						className={`${styles["down-arrow-icon"]}`}
+						src="../../assets/desktop/icon-arrow-down.svg"
+						alt="down arrow icon"
+					/>
+				)} */}
 			</button>
 			{isPanelDisplayed && (
-				<div>
-					<ol>
+				<div className={`${styles["info-panel"]}`}>
+					<ol className={`${styles["list"]}`}>
 						<li className={`${styles["list-item"]}`}>
-							<span>CURRENT TIMEZONE</span>
-							<span>{props.timezoneName}</span>
+							<span className={`${styles["category"]}`}>CURRENT TIMEZONE</span>
+							<span className={`${styles["data"]}`}>{props.timezoneName}</span>
 						</li>
 						<li className={`${styles["list-item"]}`}>
-							<span>DAY OF THE YEAR</span>
-							<span>{props.dayOfYear}</span>
+							<span className={`${styles["category"]}`}>DAY OF THE YEAR</span>
+							<span className={`${styles["data"]}`}>{props.dayOfYear}</span>
 						</li>
 						<li className={`${styles["list-item"]}`}>
-							<span>DAY OF THE WEEK</span>
-							<span>{props.dayOfWeek}</span>
+							<span className={`${styles["category"]}`}>DAY OF THE WEEK</span>
+							<span className={`${styles["data"]}`}>{props.dayOfWeek}</span>
 						</li>
 						<li className={`${styles["list-item"]}`}>
-							<span>WEEK NUMBER</span>
-							<span>{props.weekNum}</span>
+							<span className={`${styles["category"]}`}>WEEK NUMBER</span>
+							<span className={`${styles["data"]}`}>{props.weekNum}</span>
 						</li>
 					</ol>
 				</div>

@@ -80,10 +80,6 @@ export default function Clock(props) {
 		locationContent = <div className={`${styles["location-info"]}`}>Loading...</div>;
 	}
 
-	// console.log(locationInfo);
-	// console.log(cityName);
-	// console.log(stateName);
-
 	return (
 		<div className={`${styles["container-main"]}`}>
 			<div>
