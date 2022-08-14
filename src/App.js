@@ -81,7 +81,7 @@ function App() {
 
 	return (
 		<>
-			<Quote />
+			{!isPanelDisplayed && <Quote />}
 			{clockContent}
 			<Button isPanelDisplayed={isPanelDisplayed} displayPanel={displayPanel} />
 			{infoPanelContent}
