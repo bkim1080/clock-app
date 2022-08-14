@@ -9,10 +9,13 @@ function App() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
+	// Clock data
 	const time = timeInfo.datetime.slice(11, 16);
 	const hour = parseInt(timeInfo.datetime.slice(11, 13));
-	const timezone = timeInfo.abbreviation;
+	const timezoneAbrev = timeInfo.abbreviation;
 	const timezoneName = timeInfo.timezone;
+
+	// InfoPanel data
 	const dayOfYear = timeInfo.day_of_year;
 	const dayOfWeek = timeInfo.day_of_week;
 	const weekNum = timeInfo.week_number;
@@ -39,7 +42,7 @@ function App() {
 
 	let clockContent = <p></p>;
 	if (timeInfo.datetime !== "") {
-		clockContent = <Clock time={time} hour={hour} timezone={timezone} error={error} />;
+		clockContent = <Clock time={time} hour={hour} timezoneAbrev={timezoneAbrev} error={error} />;
 	}
 	if (error) {
 		clockContent = <p>{error}</p>;

@@ -92,7 +92,7 @@ export default function Clock(props) {
 			</div>
 			<div className={`${styles["container-time"]}`}>
 				<span className={styles.time}>{props.time}</span>
-				<span className={styles.timezone}>{props.timezone}</span>
+				<span className={styles.timezoneAbrev}>{props.timezoneAbrev}</span>
 			</div>
 			{locationContent}
 		</div>
