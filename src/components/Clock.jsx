@@ -28,17 +28,17 @@ export default function Clock(props) {
 	}, []);
 
 	// Render Greeting Message
-	const chooseGreeting = () => {
+	const selectGreeting = () => {
 		if (props.hour >= 5 && props.hour < 12) {
-			return <span className={styles.greeting}>GOOD MORNING</span>;
+			return "GOOD MORNING";
 		} else if (props.hour >= 12 && props.hour < 18) {
-			return <span className={styles.greeting}>GOOD EVENING</span>;
+			return "GOOD EVENING";
 		} else {
-			return <span className={styles.greeting}>GOOD NIGHT</span>;
+			return "GOOD NIGHT";
 		}
 	};
 	// Render Symbol
-	const chooseSymbol = () => {
+	const selectSymbol = () => {
 		if (props.hour >= 5 && props.hour < 17) {
 			return <img className={styles.symbol} src="/assets/desktop/icon-sun.svg" alt="sun" />;
 		} else {
@@ -66,25 +66,20 @@ export default function Clock(props) {
 	let locationContent = <div></div>;
 
 	if (cityName !== "" && stateName !== "") {
-		locationContent = (
-			<div className={`${styles["location-info"]}`}>
-				in {""}
-				<span>{cityName}</span>, <span>{stateName}</span>
-			</div>
-		);
+		locationContent = `in ${((<span>{cityName}</span>), (<span>{stateName}</span>))}`;
 	}
 	if (error) {
-		locationContent = <div className={`${styles["location-info"]}`}>{error}</div>;
+		locationContent = { error };
 	}
 	if (isLoading) {
-		locationContent = <div className={`${styles["location-info"]}`}>Loading...</div>;
+		locationContent = "Loading...";
 	}
 
 	return (
-		<div className={`${styles["container-main"]}`}>
-			<div>
-				{chooseSymbol()}
-				{chooseGreeting()}
+		<section className={`${styles["container"]}`}>
+			<div className={`${styles[""]}`}>
+				{selectSymbol()}
+				<span className={styles.greeting}>{selectGreeting()}</span>
 			</div>
 			<div className={`${styles["container-time"]}`}>
 				<span className={styles.time}>{props.time}</span>
@@ -92,7 +87,7 @@ export default function Clock(props) {
 			</div>
 			{/* {Placeholder to prevent API requests} */}
 			<div className={`${styles["location-info"]}`}>in Baltimore, Maryland</div>
-			{/* {locationContent} */}
-		</div>
+			{/* <div className={`${styles["location-info"]}`}>{locationContent}</div> */}
+		</section>
 	);
 }

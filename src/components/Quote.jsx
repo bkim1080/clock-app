@@ -26,33 +26,30 @@ export default function Quote() {
 		getQuoteInfo();
 	}, []);
 
-	let quoteContent = null;
-	if (quoteInfo) {
-		quoteContent = (
-			<>
-				<div className={`${styles["quote-text"]}`}>
-					<p className={`${styles["quote"]}`}>"{quoteInfo.content}"</p>
-					<p className={`${styles["quote-author"]}`}>{quoteInfo.author}</p>
-				</div>
-				<img
-					className={`${styles["refresh-icon"]}`}
-					onClick={getQuoteInfo}
-					src="../../assets/desktop/icon-refresh.svg"
-					alt="refresh icon"
-				/>
-			</>
-		);
-	}
-	if (error) {
-		quoteContent = error.message;
-	}
-	if (isLoading) {
-		quoteContent = "Loading...";
-	}
+	const quoteContent = function () {
+		if (quoteInfo) {
+			return (
+				<>
+					<div className={`${styles["quote-text"]}`}>
+						<p className={`${styles["quote"]}`}>"{quoteInfo.content}"</p>
+						<p className={`${styles["quote-author"]}`}>{quoteInfo.author}</p>
+					</div>
+					<img
+						className={`${styles["refresh-icon"]}`}
+						onClick={getQuoteInfo}
+						src="../../assets/desktop/icon-refresh.svg"
+						alt="refresh icon"
+					/>
+				</>
+			);
+		}
+		if (error) {
+			return error.message;
+		}
+		if (isLoading) {
+			return "Loading...";
+		}
+	};
 
-	console.log(quoteInfo);
-	console.log(quoteInfo.content);
-	console.log(quoteInfo.author);
-
-	return <div className={`${styles["container-main"]}`}>{quoteContent}</div>;
+	return <section className={`${styles["container"]}`}>{quoteContent()}</section>;
 }

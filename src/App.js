@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./App.module.css";
 
 import Button from "./components/Button";
 import Clock from "./components/Clock";
@@ -7,10 +8,10 @@ import Quote from "./components/Quote";
 
 function App() {
 	// Button
-	const [isPanelDisplayed, setIsPanelDisplayed] = useState(false);
+	const [isPanelOpen, setIsPanelOpen] = useState(false);
 
 	const displayPanel = function () {
-		setIsPanelDisplayed((prevIsPanelDisplayed) => !prevIsPanelDisplayed);
+		setIsPanelOpen((prevIsPanelOpen) => !prevIsPanelOpen);
 	};
 
 	// Fetch Time Info
@@ -60,11 +61,11 @@ function App() {
 	const dayOfWeek = timeInfo.day_of_week;
 	const weekNum = timeInfo.week_number;
 
-	let infoPanelContent = <p></p>;
-	if (timeInfo.datetime !== "") {
+	let infoPanelContent;
+	if (timeInfo.datetime !== "" && isPanelOpen) {
 		infoPanelContent = (
 			<InfoPanel
-				isPanelDisplayed={isPanelDisplayed}
+				isPanelOpen={isPanelOpen}
 				timezoneName={timezoneName}
 				dayOfYear={dayOfYear}
 				dayOfWeek={dayOfWeek}
@@ -80,12 +81,12 @@ function App() {
 	}
 
 	return (
-		<>
-			{!isPanelDisplayed && <Quote />}
+		<div className={isPanelOpen ? `${styles["container-active"]}` : styles.container}>
+			<Quote />
 			{clockContent}
-			<Button isPanelDisplayed={isPanelDisplayed} displayPanel={displayPanel} />
+			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />
 			{infoPanelContent}
-		</>
+		</div>
 	);
 }
 

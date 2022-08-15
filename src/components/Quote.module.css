@@ -1,10 +1,10 @@
-.container-main {
+.container {
 	color: white;
 
+	height: 11.8rem; /* static height and margin used to allow Clock to be in same position */
+	margin: 0 auto 22.6rem;
+	padding-top: 3.2rem; /* padding isntead of margin in order to be included as part of <body>?? */
 	width: 86%;
-	margin: 0 auto;
-	padding-top: 3.2rem;
-	height: 11.8rem;
 
 	display: flex;
 	justify-content: space-between;
@@ -27,6 +27,6 @@
 
 .refresh-icon {
 	cursor: pointer;
-	width: 16.5px;
-	height: 16.5px;
+	width: 1.65rem;
+	height: 1.65rem;
 }

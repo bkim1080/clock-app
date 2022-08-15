@@ -1,0 +1,7 @@
+.container {
+	position: relative;
+}
+
+.container-active {
+	bottom: 25.6rem;
+}
