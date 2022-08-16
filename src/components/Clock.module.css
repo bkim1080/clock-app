@@ -13,6 +13,14 @@
 	}
 }
 
+@media (min-width: 1440px) {
+	.container,
+	.container-active {
+		margin-bottom: 0;
+		margin-left: 12%;
+	}
+}
+
 .container-active {
 	padding-top: 10rem;
 }
@@ -20,6 +28,12 @@
 @media (min-width: 768px) {
 	.container-active {
 		padding-top: 15.3rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container-active {
+		padding-top: 5.6rem;
 	}
 }
 
@@ -35,19 +49,22 @@
 	}
 }
 
-.location-info,
-.greeting {
+@media (min-width: 1440px) {
+	.container-time {
+		margin-top: 1.6rem;
+		margin-bottom: 1.6rem;
+	}
+}
+
+.greeting,
+.location-info {
 	font-size: 1.5rem;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-	.location-info,
-	.greeting {
-		font-size: 1.8rem;
-		line-height: 2.8rem;
-	}
+.greeting {
+	line-height: 2.5rem;
 }
 
 .location-info {
@@ -55,8 +72,26 @@
 	line-height: 2.8rem;
 }
 
-.greeting {
-	line-height: 2.5rem;
+@media (min-width: 768px) {
+	.greeting,
+	.location-info {
+		font-size: 1.8rem;
+		letter-spacing: 3.6px;
+		line-height: 2.8rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.greeting {
+		font-size: 2rem;
+		letter-spacing: 4px;
+	}
+}
+@media (min-width: 1440px) {
+	.location-info {
+		font-size: 2.4rem;
+		letter-spacing: 4.8px;
+	}
 }
 
 .symbol {
@@ -69,6 +104,12 @@
 @media (min-width: 768px) {
 	.symbol {
 		margin-right: 2rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.symbol {
+		margin-right: 1.6rem;
 	}
 }
 
@@ -91,6 +132,14 @@
 	}
 }
 
+@media (min-width: 1440px) {
+	.time {
+		font-size: 20rem;
+		letter-spacing: -5px;
+		line-height: 20rem;
+	}
+}
+
 .timezoneAbrev {
 	font-size: 1.5rem;
 	font-weight: 300;
@@ -100,6 +149,11 @@
 @media (min-width: 768px) {
 	.timezoneAbrev {
 		font-size: 3.2rem;
-		font-weight: 300;
+	}
+}
+
+@media (min-width: 1440px) {
+	.timezoneAbrev {
+		font-size: 4rem;
 	}
 }
