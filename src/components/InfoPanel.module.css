@@ -5,10 +5,10 @@
 }
 
 .data {
+	align-self: center;
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 2.4rem;
-	align-self: center;
 }
 
 .info-panel-day {
@@ -17,8 +17,8 @@
 }
 
 .info-panel-night {
-	color: white;
 	background-color: black;
+	color: white;
 	opacity: 80%;
 }
 
@@ -34,5 +34,6 @@
 	width: 86%;
 	margin: 0 auto;
 	padding-top: 4.8rem;
-	padding-bottom: calc(100vh - 631px);
+	/* padding-bottom: calc(100vh - 631px); */
+	padding-bottom: max(calc(100vh - 631px), 36px);
 }

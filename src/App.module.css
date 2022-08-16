@@ -1,9 +1,8 @@
 .container-day,
 .container-night {
-	background-repeat: no-repeat;
 	background-size: cover;
 
-	min-height: 631px;
+	min-height: 667px;
 	height: 100vh;
 }
 
@@ -12,7 +11,7 @@
 		url("/public/assets/mobile/bg-image-daytime.jpg");
 }
 
-/* .container-night {
+.container-night {
 	background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.4)),
 		url("/public/assets/mobile/bg-image-nighttime.jpg");
-} */
+}
