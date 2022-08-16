@@ -6,6 +6,14 @@
 	height: 100vh;
 }
 
+@media (min-width: 768px) {
+	.container-day,
+	.container-night {
+		min-height: 1024px;
+		height: 100vh;
+	}
+}
+
 .container-day {
 	background-image: linear-gradient(rgba(63, 61, 61, 0.55), rgba(63, 61, 61, 0.55)),
 		url("/public/assets/mobile/bg-image-daytime.jpg");

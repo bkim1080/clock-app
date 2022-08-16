@@ -17,6 +17,12 @@
 	padding-top: 10rem;
 }
 
+@media (min-width: 768px) {
+	.container-active {
+		padding-top: 15.3rem;
+	}
+}
+
 .container-time {
 	margin-top: 1.6rem;
 	margin-bottom: 1.6rem;
