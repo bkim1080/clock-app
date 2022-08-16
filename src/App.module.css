@@ -47,3 +47,10 @@
 			url("/public/assets/desktop/bg-image-nighttime.jpg");
 	}
 }
+
+@media (min-width: 1440px) {
+	.container-layout {
+		display: flex;
+		align-items: flex-end;
+	}
+}

@@ -27,6 +27,12 @@
 	}
 }
 
+@media (min-width: 1440px) {
+	.button {
+		margin-left: 300px;
+	}
+}
+
 .down-arrow-icon {
 	margin-left: 1.5rem;
 	transform: rotate(180deg);

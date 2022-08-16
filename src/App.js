@@ -92,8 +92,10 @@ function App() {
 	return (
 		<div className={isNight ? `${styles["container-night"]}` : `${styles["container-day"]}`}>
 			{!isPanelOpen && <Quote />}
-			{clockContent}
-			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} /> {isPanelOpen && infoPanelContent}
+			<div className={`${styles["container-layout"]}`}>
+				{clockContent}
+				<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} /> {isPanelOpen && infoPanelContent}
+			</div>
 		</div>
 	);
 }
