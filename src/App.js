@@ -94,7 +94,8 @@ function App() {
 			{!isPanelOpen && <Quote />}
 			{clockContent}
 			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />
-			{infoPanelContent}
+			{/* {infoPanelContent} */}
+			{isPanelOpen && infoPanelContent}
 		</div>
 	);
 }
