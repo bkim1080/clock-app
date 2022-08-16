@@ -4,15 +4,15 @@ import styles from "./Clock.module.css";
 export default function Clock(props) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
-	const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1440);
-	const updateTabletImage = () => {
-		setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1440);
+	const [isNotMobile, setIsNotMobile] = useState(window.innerWidth <= 768);
+	const updateGreeting = () => {
+		setIsNotMobile(window.innerWidth <= 768);
 	};
 
 	useEffect(() => {
-		window.addEventListener("resize", updateTabletImage);
+		window.addEventListener("resize", updateGreeting);
 		return () => {
-			window.removeEventListener("resize", updateTabletImage);
+			window.removeEventListener("resize", updateGreeting);
 		};
 	});
 
@@ -49,7 +49,7 @@ export default function Clock(props) {
 		}
 	};
 
-	const selectGreetingTablet = () => {
+	const selectGreeting = () => {
 		if (props.hour >= 5 && props.hour < 12) {
 			return "good morning, it's currently";
 		} else if (props.hour >= 12 && props.hour < 18) {
@@ -100,7 +100,7 @@ export default function Clock(props) {
 		<section className={props.isPanelOpen ? `${styles["container-active"]}` : styles.container}>
 			<div className={`${styles[""]}`}>
 				{selectSymbol()}
-				<span className={styles.greeting}>{isTablet ? selectGreetingTablet() : selectGreetingMobile()}</span>
+				<span className={styles.greeting}>{isNotMobile ? selectGreetingMobile() : selectGreeting()}</span>
 			</div>
 			<div className={`${styles["container-time"]}`}>
 				<span className={styles.time}>{props.time}</span>
