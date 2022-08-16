@@ -82,8 +82,14 @@ function App() {
 		infoPanelContent = <p>Loading...</p>;
 	}
 
+	let isNightTime;
+	if (0 <= hour <= 5 || 18 <= hour <= 24) {
+		isNightTime = true;
+	} else {
+		isNightTime = false;
+	}
 	return (
-		<div className={styles.container}>
+		<div className={isNightTime ? `${styles["container-night"]}` : `${styles["container-day"]}`}>
 			{!isPanelOpen && <Quote />}
 			{clockContent}
 			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />
