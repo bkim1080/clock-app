@@ -6,11 +6,15 @@ export default function Quote() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
+	const controller = new AbortController();
+	const signal = controller.signal;
+
+	// Fetch quote info with error handling
 	const getQuoteInfo = async function () {
 		setIsLoading(true);
 		setError(null);
 		try {
-			const response = await fetch("https://api.quotable.io/random");
+			const response = await fetch("https://api.quotable.io/random", { signal });
 			if (!response.ok) {
 				throw new Error("Loading Failed");
 			}
@@ -24,6 +28,9 @@ export default function Quote() {
 
 	useEffect(() => {
 		getQuoteInfo();
+		return () => {
+			controller.abort();
+		};
 	}, []);
 
 	const quoteContent = function () {
