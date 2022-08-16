@@ -1,8 +1,12 @@
-.container {
+.container,
+.container-active {
 	color: white;
-
 	margin-bottom: 4.8rem;
 	margin-left: 7%;
+}
+
+.container-active {
+	padding-top: 10rem;
 }
 
 .container-time {

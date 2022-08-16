@@ -76,7 +76,7 @@ export default function Clock(props) {
 	}
 
 	return (
-		<section className={`${styles["container"]}`}>
+		<section className={props.isPanelOpen ? `${styles["container-active"]}` : styles.container}>
 			<div className={`${styles[""]}`}>
 				{selectSymbol()}
 				<span className={styles.greeting}>{selectGreeting()}</span>

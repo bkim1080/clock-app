@@ -47,7 +47,9 @@ function App() {
 
 	let clockContent = <p></p>;
 	if (timeInfo.datetime !== "") {
-		clockContent = <Clock time={time} hour={hour} timezoneAbrev={timezoneAbrev} error={error} />;
+		clockContent = (
+			<Clock isPanelOpen={isPanelOpen} time={time} hour={hour} timezoneAbrev={timezoneAbrev} error={error} />
+		);
 	}
 	if (error) {
 		clockContent = <p>{error}</p>;
@@ -81,8 +83,8 @@ function App() {
 	}
 
 	return (
-		<div className={isPanelOpen ? `${styles["container-active"]}` : styles.container}>
-			<Quote />
+		<div className={styles.container}>
+			{!isPanelOpen && <Quote />}
 			{clockContent}
 			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />
 			{infoPanelContent}
