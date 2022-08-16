@@ -83,11 +83,12 @@ function App() {
 	}
 
 	let isNightTime;
-	if (0 <= hour <= 5 || 18 <= hour <= 24) {
-		isNightTime = true;
-	} else {
+	if (5 <= hour <= 23) {
 		isNightTime = false;
+	} else {
+		isNightTime = true;
 	}
+
 	return (
 		<div className={isNightTime ? `${styles["container-night"]}` : `${styles["container-day"]}`}>
 			{!isPanelOpen && <Quote />}
