@@ -15,3 +15,15 @@
 	background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.4)),
 		url("/public/assets/mobile/bg-image-nighttime.jpg");
 }
+
+@media (min-width: 768px) {
+	.container-day {
+		background-image: linear-gradient(rgba(63, 61, 61, 0.55), rgba(63, 61, 61, 0.55)),
+			url("/public/assets/tablet/bg-image-daytime.jpg");
+	}
+
+	.container-night {
+		background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.4)),
+			url("/public/assets/tablet/bg-image-nighttime.jpg");
+	}
+}
