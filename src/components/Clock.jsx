@@ -63,17 +63,17 @@ export default function Clock(props) {
 	const cityName = locationInfo.data.location.city.name;
 	const stateName = locationInfo.data.location.region.name;
 
-	let locationContent = <div></div>;
-
-	if (cityName !== "" && stateName !== "") {
-		locationContent = `in ${((<span>{cityName}</span>), (<span>{stateName}</span>))}`;
-	}
-	if (error) {
-		locationContent = { error };
-	}
-	if (isLoading) {
-		locationContent = "Loading...";
-	}
+	const locationContent = function () {
+		if (cityName !== "" && stateName !== "") {
+			return `in ${((<span>{cityName}</span>), (<span>{stateName}</span>))}`;
+		}
+		if (error) {
+			return error;
+		}
+		if (isLoading) {
+			return "Loading...";
+		}
+	};
 
 	return (
 		<section className={props.isPanelOpen ? `${styles["container-active"]}` : styles.container}>
@@ -87,7 +87,7 @@ export default function Clock(props) {
 			</div>
 			{/* {Placeholder to prevent API requests} */}
 			<div className={`${styles["location-info"]}`}>in Baltimore, Maryland</div>
-			{/* <div className={`${styles["location-info"]}`}>{locationContent}</div> */}
+			{/* <div className={`${styles["location-info"]}`}>{locationContent()}</div> */}
 		</section>
 	);
 }
