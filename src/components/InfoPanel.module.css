@@ -11,9 +11,15 @@
 	align-self: center;
 }
 
-.info-panel {
+.info-panel-day {
 	background-color: white;
-	opacity: 75%;
+	opacity: 80%;
+}
+
+.info-panel-night {
+	color: white;
+	background-color: black;
+	opacity: 80%;
 }
 
 .list-item {

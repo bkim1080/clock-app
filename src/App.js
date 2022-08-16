@@ -44,6 +44,12 @@ function App() {
 	const hour = parseInt(timeInfo.datetime.slice(11, 13));
 	const timezoneAbrev = timeInfo.abbreviation;
 	const timezoneName = timeInfo.timezone;
+	let isNight;
+	if (5 <= hour <= 23) {
+		isNight = true;
+	} else {
+		isNight = true;
+	}
 
 	let clockContent = <p></p>;
 	if (timeInfo.datetime !== "") {
@@ -67,6 +73,7 @@ function App() {
 	if (timeInfo.datetime !== "" && isPanelOpen) {
 		infoPanelContent = (
 			<InfoPanel
+				isNight={isNight}
 				isPanelOpen={isPanelOpen}
 				timezoneName={timezoneName}
 				dayOfYear={dayOfYear}
@@ -82,15 +89,8 @@ function App() {
 		infoPanelContent = <p>Loading...</p>;
 	}
 
-	let isNightTime;
-	if (5 <= hour <= 23) {
-		isNightTime = false;
-	} else {
-		isNightTime = true;
-	}
-
 	return (
-		<div className={isNightTime ? `${styles["container-night"]}` : `${styles["container-day"]}`}>
+		<div className={isNight ? `${styles["container-night"]}` : `${styles["container-day"]}`}>
 			{!isPanelOpen && <Quote />}
 			{clockContent}
 			<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />

@@ -2,7 +2,7 @@ import styles from "./InfoPanel.module.css";
 
 export default function InfoPanel(props) {
 	return (
-		<section className={`${styles["info-panel"]}`}>
+		<section className={props.isNight ? `${styles["info-panel-night"]}` : `${styles["info-panel-day"]}`}>
 			<ol className={`${styles["list"]}`}>
 				<li className={`${styles["list-item"]}`}>
 					<span className={`${styles["category"]}`}>CURRENT TIMEZONE</span>
