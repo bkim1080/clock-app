@@ -10,7 +10,13 @@
 	.container-day,
 	.container-night {
 		min-height: 1024px;
-		height: 100vh;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container-day,
+	.container-night {
+		min-height: 800px;
 	}
 }
 
@@ -50,7 +56,9 @@
 
 @media (min-width: 1440px) {
 	.container-layout {
-		display: flex;
 		align-items: flex-end;
+		display: flex;
+
+		margin-bottom: 5.6rem;
 	}
 }

@@ -54,6 +54,12 @@
 	}
 }
 
+@media (min-width: 1440px) {
+	.open-panel {
+		margin-bottom: 0;
+	}
+}
+
 .up-arrow-icon {
 	margin-left: 1.9rem; /* to componsate for the narrower "LESS" text */
 }

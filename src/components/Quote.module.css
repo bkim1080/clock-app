@@ -22,7 +22,7 @@
 @media (min-width: 1440px) {
 	.container {
 		margin-left: 12%;
-		margin-bottom: 23.3rem;
+		margin-bottom: 30rem;
 		padding-top: 5.6rem; /* padding instead of margin in order to be included as part of <body>?? */
 	}
 }

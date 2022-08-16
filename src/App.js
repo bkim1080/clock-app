@@ -46,7 +46,7 @@ function App() {
 	const timezoneName = timeInfo.timezone;
 	let isNight;
 	if (5 <= hour <= 23) {
-		isNight = false;
+		isNight = true;
 	} else {
 		isNight = true;
 	}
@@ -94,8 +94,9 @@ function App() {
 			{!isPanelOpen && <Quote />}
 			<div className={`${styles["container-layout"]}`}>
 				{clockContent}
-				<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} /> {isPanelOpen && infoPanelContent}
+				<Button isPanelOpen={isPanelOpen} displayPanel={displayPanel} />
 			</div>
+			{isPanelOpen && infoPanelContent}
 		</div>
 	);
 }

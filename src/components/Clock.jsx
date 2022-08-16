@@ -60,7 +60,7 @@ export default function Clock(props) {
 	};
 	// Render Symbol
 	const selectSymbol = () => {
-		if (props.hour >= 5 && props.hour < 17) {
+		if (5 <= props.hour <= 17) {
 			return <img className={styles.symbol} src="/assets/desktop/icon-sun.svg" alt="sun" />;
 		} else {
 			return <img className={styles.symbol} src="/assets/desktop/icon-moon.svg" alt="moon" />;
