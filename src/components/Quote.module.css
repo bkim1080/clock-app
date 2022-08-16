@@ -13,9 +13,8 @@
 @media (min-width: 768px) {
 	.container {
 		margin-left: 8%;
-		margin-bottom: 38.8rem;
-		padding-top: 8rem; /* padding sntead of margin in order to be included as part of <body>?? */
-		width: 86%;
+		margin-bottom: 48rem;
+		padding-top: 8rem; /* padding instead of margin in order to be included as part of <body>?? */
 	}
 }
 
