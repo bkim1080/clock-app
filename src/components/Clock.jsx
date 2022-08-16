@@ -4,6 +4,17 @@ import styles from "./Clock.module.css";
 export default function Clock(props) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
+	const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1440);
+	const updateTabletImage = () => {
+		setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1440);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", updateTabletImage);
+		return () => {
+			window.removeEventListener("resize", updateTabletImage);
+		};
+	});
 
 	const getLocationInfo = async function () {
 		setIsLoading(true);
@@ -28,13 +39,23 @@ export default function Clock(props) {
 	}, []);
 
 	// Render Greeting Message
-	const selectGreeting = () => {
+	const selectGreetingMobile = () => {
 		if (props.hour >= 5 && props.hour < 12) {
 			return "good morning";
 		} else if (props.hour >= 12 && props.hour < 18) {
 			return "good evening";
 		} else {
 			return "good night";
+		}
+	};
+
+	const selectGreetingTablet = () => {
+		if (props.hour >= 5 && props.hour < 12) {
+			return "good morning, it's currently";
+		} else if (props.hour >= 12 && props.hour < 18) {
+			return "good evening, it's currently";
+		} else {
+			return "good night, it's currently";
 		}
 	};
 	// Render Symbol
@@ -79,7 +100,7 @@ export default function Clock(props) {
 		<section className={props.isPanelOpen ? `${styles["container-active"]}` : styles.container}>
 			<div className={`${styles[""]}`}>
 				{selectSymbol()}
-				<span className={styles.greeting}>{selectGreeting()}</span>
+				<span className={styles.greeting}>{isTablet ? selectGreetingTablet() : selectGreetingMobile()}</span>
 			</div>
 			<div className={`${styles["container-time"]}`}>
 				<span className={styles.time}>{props.time}</span>
