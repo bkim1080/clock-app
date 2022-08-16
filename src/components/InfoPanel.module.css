@@ -4,11 +4,25 @@
 	line-height: 2.8rem;
 }
 
+@media (min-width: 768px) {
+	.category {
+		font-size: 1.3rem;
+		letter-spacing: 2.6px;
+	}
+}
+
 .data {
 	align-self: center;
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 2.4rem;
+}
+
+@media (min-width: 768px) {
+	.data {
+		font-size: 4rem;
+		line-height: 4.8rem;
+	}
 }
 
 .info-panel-day {
@@ -39,6 +53,6 @@
 
 @media (min-width: 768px) {
 	.list {
-		padding-bottom: max(calc(100vh - 789px), 235px);
+		padding-bottom: max(calc(100vh - 869px), 155px);
 	}
 }

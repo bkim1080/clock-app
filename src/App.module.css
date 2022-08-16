@@ -20,7 +20,7 @@
 }
 
 .container-night {
-	background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.4)),
+	background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.6)),
 		url("/public/assets/mobile/bg-image-nighttime.jpg");
 }
 
@@ -31,7 +31,7 @@
 	}
 
 	.container-night {
-		background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.4)),
+		background-image: linear-gradient(rgba(63, 61, 61, 0.4), rgba(63, 61, 61, 0.6)),
 			url("/public/assets/tablet/bg-image-nighttime.jpg");
 	}
 }
