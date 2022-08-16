@@ -30,11 +30,11 @@ export default function Clock(props) {
 	// Render Greeting Message
 	const selectGreeting = () => {
 		if (props.hour >= 5 && props.hour < 12) {
-			return "GOOD MORNING";
+			return "good morning";
 		} else if (props.hour >= 12 && props.hour < 18) {
-			return "GOOD EVENING";
+			return "good evening";
 		} else {
-			return "GOOD NIGHT";
+			return "good night";
 		}
 	};
 	// Render Symbol

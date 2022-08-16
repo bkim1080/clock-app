@@ -5,6 +5,14 @@
 	margin-left: 7%;
 }
 
+@media (min-width: 768px) {
+	.container,
+	.container-active {
+		margin-bottom: 8rem;
+		margin-left: 8%;
+	}
+}
+
 .container-active {
 	padding-top: 10rem;
 }
@@ -14,24 +22,48 @@
 	margin-bottom: 1.6rem;
 }
 
-.location-info {
+@media (min-width: 768px) {
+	.container-time {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.location-info,
+.greeting {
 	font-size: 1.5rem;
-	font-weight: 700;
-	letter-spacing: 2px;
-	line-height: 2.8rem;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
+@media (min-width: 768px) {
+	.location-info,
+	.greeting {
+		font-size: 1.8rem;
+		line-height: 2.8rem;
+	}
+}
+
+.location-info {
+	font-weight: 700;
+	line-height: 2.8rem;
+}
+
 .greeting {
-	letter-spacing: 2px;
+	line-height: 2.5rem;
 }
 
 .symbol {
-	margin-right: 1.6rem;
-
-	vertical-align: bottom;
 	height: 24px;
+	margin-right: 1.6rem;
+	vertical-align: bottom;
 	width: 24px;
+}
+
+@media (min-width: 768px) {
+	.symbol {
+		margin-right: 2rem;
+	}
 }
 
 .time {
@@ -43,8 +75,25 @@
 	margin-right: 0.5rem;
 }
 
+@media (min-width: 768px) {
+	.time {
+		font-size: 17.5rem;
+		letter-spacing: -4.38px;
+		line-height: 17.5rem;
+
+		margin-right: 1.1rem;
+	}
+}
+
 .timezoneAbrev {
 	font-size: 1.5rem;
 	font-weight: 300;
 	line-height: 2.8rem;
+}
+
+@media (min-width: 768px) {
+	.timezoneAbrev {
+		font-size: 3.2rem;
+		font-weight: 300;
+	}
 }
