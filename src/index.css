@@ -13,10 +13,14 @@ html {
 }
 
 body {
+	/* background-image: linear-gradient(rgba(63, 61, 61, 0.55), rgba(63, 61, 61, 0.55)),
+		url("/public/assets/mobile/bg-image-daytime.jpg");
+	height: 100vh; */
 	font-family: "Inter", sans-serif;
 	font-size: 1.6rem;
 }
 
 img {
 	max-width: 100%;
+	height: auto;
 }

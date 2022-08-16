@@ -46,7 +46,7 @@ function App() {
 	const timezoneName = timeInfo.timezone;
 	let isNight;
 	if (5 <= hour <= 23) {
-		isNight = true;
+		isNight = false;
 	} else {
 		isNight = true;
 	}
